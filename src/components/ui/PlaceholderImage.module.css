@@ -1,0 +1,62 @@
+.placeholder {
+  width: 100%;
+  aspect-ratio: var(--ph-ratio, 4/3);
+  background-color: var(--ph-bg, #F5E6DC);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Subtle grain texture */
+.placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.15) 0%, transparent 60%),
+    radial-gradient(circle at 75% 75%, rgba(0,0,0,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.emoji {
+  font-size: 2.5rem;
+  line-height: 1;
+  display: block;
+  opacity: 0.7;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ph-accent, #C8632A);
+  letter-spacing: 0.02em;
+}
+
+.path {
+  font-family: 'SF Mono', 'Courier New', monospace;
+  font-size: 0.65rem;
+  color: var(--ph-accent, #C8632A);
+  opacity: 0.5;
+  background: rgba(255,255,255,0.5);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
